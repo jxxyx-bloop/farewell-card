@@ -12,5 +12,5 @@ window.CARD_CONFIG = {
 
   // Verb/prompt shown above the message box (the recipient's name is
   // appended automatically, e.g. "Leave a note for Friend").
-  composePrompt: "Leave a note for Samantha",
+  composePrompt: "Leave a note for",
 };
