@@ -139,6 +139,12 @@ You can host on Vercel by swapping the Cloudflare Worker for a Vercel **Serverle
 
 ## 🎛️ Customize further
 
+Everything is yours to rebrand — mascots, colours, copy, even the team name. Here's a variation one team built from this template, with their own characters and branding:
+
+![A team's customized variation of the farewell card](docs/variation-shopee.png)
+
+> _The mascots and branding in the example above belong to their respective owners and are **not** part of this template — they're just a showcase of what you can build on top of it. The template ships with the red-panda mascot set._
+
 | Want to change… | Edit… |
 |---|---|
 | Recipient name, subtitle, prompt | `config.js` |
