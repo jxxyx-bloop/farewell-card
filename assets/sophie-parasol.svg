@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300">
+  <!-- Beach umbrella canopy -->
+  <ellipse cx="120" cy="68" rx="90" ry="28" fill="#FF6B6B"/>
+  <path d="M30,68 Q120,44 210,68" fill="#FFD700" opacity="0.6"/>
+  <path d="M30,68 Q120,54 210,68 Q120,76 30,68Z" fill="#26C6DA" opacity="0.5"/>
+
+  <!-- Umbrella spoke sections (stripes) -->
+  <line x1="120" y1="68" x2="30" y2="68" stroke="#FFAAAA" stroke-width="1.5"/>
+  <line x1="120" y1="68" x2="75" y2="44" stroke="#FFAAAA" stroke-width="1.5"/>
+  <line x1="120" y1="68" x2="120" y2="40" stroke="#FFAAAA" stroke-width="1.5"/>
+  <line x1="120" y1="68" x2="165" y2="44" stroke="#FFAAAA" stroke-width="1.5"/>
+  <line x1="120" y1="68" x2="210" y2="68" stroke="#FFAAAA" stroke-width="1.5"/>
+
+  <!-- Umbrella pole -->
+  <line x1="120" y1="68" x2="120" y2="240" stroke="#FF8C42" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Hair back -->
+  <ellipse cx="120" cy="148" rx="68" ry="66" fill="#FF8C42"/>
+
+  <!-- Face -->
+  <circle cx="120" cy="166" r="65" fill="#FFD6B3"/>
+
+  <!-- Cheeks -->
+  <ellipse cx="86" cy="182" rx="14" ry="9" fill="#FFAAAA" opacity="0.55"/>
+  <ellipse cx="154" cy="182" rx="14" ry="9" fill="#FFAAAA" opacity="0.55"/>
+
+  <!-- Eyes — happy relaxed -->
+  <path d="M97,162 Q104,152 111,162" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M129,162 Q136,152 143,162" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Smile — gentle content -->
+  <path d="M96,190 Q120,212 144,190" fill="#FF9999" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M96,190 Q120,202 144,190" fill="white"/>
+
+  <!-- Hair strands -->
+  <path d="M58,140 Q48,96 92,88" stroke="#FF8C42" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <path d="M182,140 Q192,96 148,88" stroke="#FF8C42" stroke-width="13" fill="none" stroke-linecap="round"/>
+
+  <!-- Pink bow -->
+  <path d="M106,98 Q120,84 134,98 Q120,112 106,98Z" fill="#FF9EC8"/>
+  <circle cx="120" cy="98" r="6" fill="#FF6BA8"/>
+
+  <!-- Arms — one holding drink, one relaxed -->
+  <ellipse cx="52" cy="230" rx="22" ry="12" fill="#FFD6B3" transform="rotate(-15 52 230)"/>
+  <ellipse cx="188" cy="225" rx="22" ry="12" fill="#FFD6B3" transform="rotate(10 188 225)"/>
+
+  <!-- Body / teal swimsuit -->
+  <ellipse cx="120" cy="278" rx="48" ry="30" fill="#26C6DA"/>
+
+  <!-- Tropical drink -->
+  <path d="M40,218 L48,248 L60,248 L68,218Z" fill="#FFD700" opacity="0.9"/>
+  <path d="M44,248 L64,248" stroke="#FF8C42" stroke-width="3"/>
+  <line x1="54" y1="218" x2="38" y2="200" stroke="#FF69B4" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="36" cy="196" r="5" fill="#FF69B4"/>
+
+  <!-- Sand dunes at bottom -->
+  <path d="M0,270 Q60,252 120,265 Q180,278 240,260 L240,300 L0,300Z" fill="#F5DEB3"/>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300">
+  <!-- Beach ball -->
+  <circle cx="175" cy="58" r="38" fill="#FF6B6B"/>
+  <path d="M140,42 Q175,22 210,42" fill="#FFD700"/>
+  <path d="M139,74 Q175,94 211,74" fill="#26C6DA"/>
+  <line x1="175" y1="20" x2="175" y2="96" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="175" cy="58" r="38" fill="none" stroke="white" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Hair back -->
+  <ellipse cx="120" cy="118" rx="74" ry="72" fill="#FF8C42"/>
+
+  <!-- Face -->
+  <circle cx="120" cy="138" r="70" fill="#FFD6B3"/>
+
+  <!-- Cheeks -->
+  <ellipse cx="86" cy="158" rx="15" ry="10" fill="#FFAAAA" opacity="0.55"/>
+  <ellipse cx="154" cy="158" rx="15" ry="10" fill="#FFAAAA" opacity="0.55"/>
+
+  <!-- Eyes — big sparkly excited -->
+  <circle cx="97" cy="133" r="13" fill="#222"/>
+  <circle cx="143" cy="133" r="13" fill="#222"/>
+  <circle cx="92" cy="128" r="4" fill="white"/>
+  <circle cx="138" cy="128" r="4" fill="white"/>
+  <circle cx="103" cy="137" r="2" fill="white"/>
+  <circle cx="149" cy="137" r="2" fill="white"/>
+
+  <!-- Big open smile -->
+  <path d="M88,163 Q120,195 152,163" fill="#FF9999" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M88,163 Q120,178 152,163" fill="white"/>
+
+  <!-- Hair front strands -->
+  <path d="M52,110 Q42,62 90,56" stroke="#FF8C42" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M188,110 Q198,62 150,56" stroke="#FF8C42" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+  <!-- Pink bow -->
+  <path d="M105,68 Q120,52 135,68 Q120,84 105,68Z" fill="#FF9EC8"/>
+  <circle cx="120" cy="68" r="7" fill="#FF6BA8"/>
+
+  <!-- Arms raised -->
+  <ellipse cx="48" cy="206" rx="24" ry="13" fill="#FFD6B3" transform="rotate(-50 48 206)"/>
+  <ellipse cx="192" cy="206" rx="24" ry="13" fill="#FFD6B3" transform="rotate(50 192 206)"/>
+
+  <!-- Body / swimsuit -->
+  <ellipse cx="120" cy="268" rx="54" ry="38" fill="#26C6DA"/>
+  <path d="M88,240 Q120,258 152,240" stroke="#00ACC1" stroke-width="3" fill="none"/>
+
+  <!-- Sparkles -->
+  <text x="28" y="180" font-size="18" opacity="0.7">✨</text>
+  <text x="196" y="170" font-size="16" opacity="0.7">⭐</text>
+</svg>

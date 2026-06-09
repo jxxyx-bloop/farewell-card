@@ -1,0 +1,11 @@
+# Local dev secrets (wrangler dev reads these — never commit)
+.dev.vars
+
+# Local dependencies and build metadata
+node_modules/
+public/
+.wrangler/
+
+# OS files
+.DS_Store
+Thumbs.db

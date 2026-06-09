@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build (copies sources into public/)
+        run: node build.js
+
+      - name: Verify build output
+        run: test -f public/index.html && test -f public/app.js && test -f public/config.js
+
+      - name: Secret scan
+        run: |
+          echo "Checking for committed secrets..."
+          # A committed local-secrets file should never exist.
+          if git ls-files | grep -E '(^|/)\.dev\.vars$'; then
+            echo "::error::.dev.vars is committed — secrets must never be in git."
+            exit 1
+          fi
+          # JSONBin access keys are bcrypt-style ($2a$/$2b$...). Flag any in tracked files.
+          if git grep -nE '\$2[aby]\$[0-9]{2}\$[./A-Za-z0-9]{20,}' -- . ':!.github/workflows/ci.yml'; then
+            echo "::error::Possible JSONBin access key committed to the repo."
+            exit 1
+          fi
+          # Non-empty credential assignments in code/config files (config.example.js keeps them
+          # empty; Markdown docs are excluded since they legitimately show the KEY=value format).
+          if git grep -nE 'JSONBIN_(API_KEY|BIN_ID)\s*=\s*[^[:space:]]+' -- . ':!.github/workflows/ci.yml' ':!*.md'; then
+            echo "::error::A JSONBIN_* credential appears to be filled in within a tracked code/config file."
+            exit 1
+          fi
+          echo "No secrets found."

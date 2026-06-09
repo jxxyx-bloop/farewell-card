@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farewell Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;600&family=Caveat:wght@400;700&family=Indie+Flower&family=Patrick+Hand&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="loading-overlay" id="loadingOverlay">
+  <img class="loading-mascot" src="assets/mascot-happy.png" alt="" draggable="false" onerror="this.style.display='none'" data-original-src="assets/mascot-happy.png" data-beach-src="assets/sophie-beach-excited.svg">
+  <div class="spinner"></div>
+  <div class="loading-text">Loading notes...</div>
+</div>
+
+<div class="sync-status" id="syncStatus">
+  <div class="sync-dot" id="syncDot"></div>
+  <span id="syncText">Synced</span>
+  <div class="theme-divider"></div>
+  <span class="theme-icon" id="themeOrange" title="Original theme">🍊</span>
+  <span class="theme-icon" id="themeBeach"  title="Beach mode">🏖️</span>
+</div>
+
+<div class="header">
+  <h1 id="cardTitle">Farewell!</h1>
+  <p class="subtitle" id="cardSubtitle">A board full of love from your team</p>
+  <div class="note-count" id="noteCount">Loading...</div>
+
+  <!-- Header mascots: real PNG characters flanking the title -->
+  <img class="header-mascot header-mascot-left"
+       src="assets/mascot-adventure.png"
+       alt="Mascot setting off on an adventure" draggable="false"
+       onerror="this.style.display='none'"
+       data-original-src="assets/mascot-adventure.png"
+       data-beach-src="assets/sophie-surfing.svg">
+  <img class="header-mascot header-mascot-right"
+       src="assets/mascot-shy.png"
+       alt="Mascot peeking" draggable="false"
+       onerror="this.style.display='none'"
+       data-original-src="assets/mascot-shy.png"
+       data-beach-src="assets/sean-snorkelling.svg">
+
+  <div class="header-wave">
+    <svg viewBox="0 0 1200 42" preserveAspectRatio="none" width="100%" height="42">
+      <path d="M0,22 C150,42 350,2 600,22 C850,42 1050,2 1200,22 L1200,42 L0,42 Z"
+            fill="#D0F0EE"/>
+    </svg>
+  </div>
+</div>
+
+<div class="main">
+  <div class="compose">
+    <img class="compose-mascot" src="assets/mascot-happy.png" alt="" draggable="false" onerror="this.style.display='none'" data-original-src="assets/mascot-happy.png" data-beach-src="assets/sophie-parasol.svg">
+    <div class="compose-inner">
+      <h3 id="composeHeading">✍️ Leave a note</h3>
+      <input type="text" id="authorInput" placeholder="Your name">
+      <textarea id="messageInput" rows="4" placeholder="Write your farewell message... 🧡"></textarea>
+      <div class="actions">
+        <button class="action-btn" id="emojiToggle" onclick="toggleEmoji()">😊</button>
+        <button class="pin-btn" id="pinBtn" onclick="pinNote()" disabled>Pin it! 📌</button>
+      </div>
+      <div class="emoji-picker hidden" id="emojiPicker"></div>
+    </div>
+  </div>
+
+  <div class="board-area" id="boardView"></div>
+</div>
+
+<div class="edit-overlay hidden" id="editOverlay">
+  <div class="edit-panel">
+    <div class="edit-header">
+      <span>✏️ Edit your note</span>
+      <button onclick="closeEdit()">✕</button>
+    </div>
+    <textarea id="editInput" rows="6" placeholder="Edit your message..." oninput="validateEditForm()"></textarea>
+    <div class="edit-actions">
+      <button class="cancel-edit-btn" onclick="closeEdit()">Cancel</button>
+      <button class="save-edit-btn" id="saveEditBtn" onclick="saveEdit()">Save changes ✓</button>
+    </div>
+  </div>
+</div>
+
+<div class="reply-overlay hidden" id="replyOverlay">
+  <div class="reply-panel">
+    <div class="reply-header">
+      <span>💬 Replies on <em id="replyNoteAuthor"></em>'s note</span>
+      <button onclick="closeReplyModal()">✕</button>
+    </div>
+    <div class="reply-list" id="replyList"></div>
+    <div class="reply-form">
+      <input type="text" id="replyAuthorInput" placeholder="Your name" oninput="validateReplyForm()">
+      <textarea id="replyTextInput" rows="2" placeholder="Write a short reply..." oninput="validateReplyForm()"></textarea>
+      <div class="reply-form-actions">
+        <button class="cancel-edit-btn" onclick="closeReplyModal()">Cancel</button>
+        <button class="save-reply-btn" id="saveReplyBtn" onclick="submitReply()" disabled>Reply ↩</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="confetti-container hidden" id="confetti"></div>
+
+<!-- Mascot celebration: appears when a note is pinned -->
+<div class="mascot-celebrate hidden" id="mascotCelebrate">
+  <img src="assets/mascot-happy.png" alt="" draggable="false" onerror="this.style.display='none'" data-original-src="assets/mascot-happy.png" data-beach-src="assets/sophie-beach-cheering.svg">
+</div>
+
+<div class="footer">
+  <img class="footer-mascot" src="assets/mascot-icecream.png" alt="" draggable="false" onerror="this.style.display='none'" data-original-src="assets/mascot-icecream.png" data-beach-src="assets/sean-beach-bow.svg">
+  <p>Made with 🧡 by your team • Pin your note above!</p>
+</div>
+
+<!-- Decorative floating side mascots -->
+<img class="mascot-fixed-left"  src="assets/mascot-adventure.png" alt="" draggable="false" onerror="this.style.display='none'" data-original-src="assets/mascot-adventure.png" data-beach-src="assets/sophie-on-beach.svg">
+<img class="mascot-fixed-right" src="assets/mascot-shy.png"  alt="" draggable="false" onerror="this.style.display='none'" data-original-src="assets/mascot-shy.png" data-beach-src="assets/sean-lei-flowers.svg">
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

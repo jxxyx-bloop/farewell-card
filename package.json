@@ -1,0 +1,28 @@
+{
+  "name": "farewell-card",
+  "version": "1.0.0",
+  "description": "A collaborative farewell card — a deployable full-stack template where a whole team can pin sticky-note goodbyes on a shared board. Static frontend + Cloudflare Worker + JSONBin.",
+  "license": "Apache-2.0",
+  "private": false,
+  "keywords": [
+    "farewell",
+    "greeting-card",
+    "guestbook",
+    "cloudflare-workers",
+    "jsonbin",
+    "template",
+    "full-stack",
+    "vanilla-js"
+  ],
+  "homepage": "https://github.com/jxxyx-bloop/farewell-card#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jxxyx-bloop/farewell-card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jxxyx-bloop/farewell-card/issues"
+  },
+  "scripts": {
+    "build": "node build.js"
+  }
+}
