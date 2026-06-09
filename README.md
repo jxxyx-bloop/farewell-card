@@ -4,7 +4,11 @@ A collaborative farewell card where your whole team can pin sticky-note goodbyes
 
 > ⭐ **If this helps you say a nice goodbye, please star the repo** — it's the easiest way to say thanks and helps other teams find it.
 
-![Screenshot placeholder — add a screenshot or GIF of your board here](docs/screenshot.png)
+| 🍊 Original theme | 🏖️ Beach theme |
+| :-: | :-: |
+| ![Farewell Card — original theme, with notes pinned](docs/screenshot.png) | ![Farewell Card — beach theme, with notes pinned](docs/screenshot-beach.png) |
+
+<sub>Toggle between the two built-in themes any time with the 🍊 / 🏖️ switch in the corner.</sub>
 
 ---
 
