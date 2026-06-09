@@ -38,7 +38,12 @@ function applyCardConfig() {
   const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
   set('cardTitle', `Farewell, ${name}!`);
   set('cardSubtitle', CARD.subtitle);
-  set('composeHeading', `✍️ ${CARD.composePrompt} ${name}`);
+  // Append the name automatically — unless the prompt already includes it,
+  // so "Leave a note for" and "Leave a note for Sam" both render correctly.
+  const prompt = CARD.composePrompt.includes(name)
+    ? CARD.composePrompt
+    : `${CARD.composePrompt} ${name}`;
+  set('composeHeading', `✍️ ${prompt}`);
 }
 
 // ─── Sanitization Helpers ───
