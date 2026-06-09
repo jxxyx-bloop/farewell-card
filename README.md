@@ -84,11 +84,10 @@ See [Hosting](#-hosting-why-cloudflare) below for why Cloudflare is recommended.
 - 🖱️ **Cloudflare dashboard (no terminal):**
   1. Go to [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers & Pages → Create → Workers**.
   2. **Connect to Git** and pick your repo.
-  3. Set the build command to `node build.js` (the site is served from the `public/` folder).
-  4. After it deploys, open the worker's **Settings → Variables and Secrets** and add two **encrypted secrets**:
+  3. After it deploys, open the worker's **Settings → Variables and Secrets** and add two **encrypted secrets**:
      - `JSONBIN_BIN_ID` → your Bin ID from Step 3
      - `JSONBIN_API_KEY` → your X-Access-Key from Step 3
-  5. Redeploy.
+  4. Redeploy.
 - ⌨️ **Command line (Wrangler):**
   ```bash
   npm install -g wrangler

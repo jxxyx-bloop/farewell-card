@@ -144,7 +144,7 @@ body::before {
 /* Left side peek mascot — fixed to the left viewport edge, slides in on hover */
 .mascot-fixed-left {
   position: fixed;
-  left: -28px; top: 38%;
+  left: -28px; top: 72%;
   width: 132px; z-index: 60;
   animation: sway 4.6s ease-in-out infinite;
   animation-delay: 0.6s;
@@ -308,7 +308,7 @@ body::before {
 .footer { text-align: center; padding: 16px 0 32px; position: relative; z-index: 5; }
 .footer-mascot {
   display: block; margin: 0 auto 10px;
-  width: 110px;
+  width: 220px;
   animation: sway 4s ease-in-out infinite;
   animation-delay: 0.3s;
   filter: drop-shadow(0 5px 14px var(--mascot-shadow));
@@ -479,7 +479,7 @@ body.beach-theme .header { padding-bottom: 52px; }
 }
 
 /* ─── Fixed-left mascot position override in beach mode ─── */
-body.beach-theme .mascot-fixed-left { top: 62%; }
+body.beach-theme .mascot-fixed-left { top: 72%; }
 
 /* Postcard edit/delete hover — mirrors sticky-note rule */
 .postcard:hover .note-actions { opacity: 1; pointer-events: auto; }
