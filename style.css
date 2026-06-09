@@ -18,6 +18,7 @@
   --accent-dot:    rgba(238,77,45,0.55);
   --mascot-shadow: rgba(238,77,45,0.35);
   --footer-color:  #EE4D2D;
+  --mascot-size:   120px; /* one size for every mascot — keeps them identical */
 }
 body.beach-theme {
   --bg-1: #E8F9F8;
@@ -122,7 +123,7 @@ body::before {
 /* Header mascots */
 .header-mascot {
   position: absolute; bottom: -42px;
-  width: clamp(90px, 10vw, 130px); z-index: 20;
+  width: var(--mascot-size); z-index: 20;
   animation: mascot-float 3s ease-in-out infinite;
   filter: drop-shadow(0 6px 14px var(--mascot-shadow));
   pointer-events: none; user-select: none;
@@ -134,7 +135,7 @@ body::before {
 .compose-mascot {
   position: absolute;
   top: -62px; right: -24px;
-  width: 105px; z-index: 25;
+  width: var(--mascot-size); z-index: 25;
   animation: sway 3.2s ease-in-out infinite;
   animation-delay: 1.8s;
   filter: drop-shadow(0 5px 14px var(--mascot-shadow));
@@ -145,7 +146,7 @@ body::before {
 .mascot-fixed-left {
   position: fixed;
   left: -28px; top: 72%;
-  width: 132px; z-index: 60;
+  width: var(--mascot-size); z-index: 60;
   animation: sway 4.6s ease-in-out infinite;
   animation-delay: 0.6s;
   filter: drop-shadow(4px 6px 16px var(--mascot-shadow));
@@ -161,7 +162,7 @@ body::before {
 .mascot-fixed-right {
   position: fixed;
   right: 12px; bottom: 155px;
-  width: 118px; z-index: 60;
+  width: var(--mascot-size); z-index: 60;
   animation: mascot-float 3.9s ease-in-out infinite;
   animation-delay: 1.1s;
   filter: drop-shadow(-3px 6px 16px var(--mascot-shadow));
@@ -308,7 +309,7 @@ body::before {
 .footer { text-align: center; padding: 16px 0 32px; position: relative; z-index: 5; }
 .footer-mascot {
   display: block; margin: 0 auto 10px;
-  width: 220px;
+  width: var(--mascot-size);
   animation: sway 4s ease-in-out infinite;
   animation-delay: 0.3s;
   filter: drop-shadow(0 5px 14px var(--mascot-shadow));
@@ -319,7 +320,7 @@ body::before {
 .mascot-celebrate {
   position: fixed; bottom: 80px; left: 50%;
   transform: translateX(-50%);
-  z-index: 9998; width: 145px;
+  z-index: 9998; width: var(--mascot-size);
   animation: mascot-pop-in 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
   filter: drop-shadow(0 8px 28px var(--accent-shadow));
   pointer-events: none;
@@ -440,7 +441,7 @@ body::before {
   transition: opacity 0.5s; gap: 12px;
 }
 .loading-overlay.fade-out { opacity: 0; pointer-events: none; }
-.loading-mascot { width: 110px; animation: mascot-float 1.8s ease-in-out infinite; }
+.loading-mascot { width: var(--mascot-size); animation: mascot-float 1.8s ease-in-out infinite; }
 .spinner { width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; }
 .loading-text { font-family: 'Nunito', sans-serif; font-weight: 700; color: white; font-size: 20px; opacity: 0.9; }
 
@@ -501,11 +502,12 @@ body.beach-theme .mascot-fixed-left { top: 72%; }
   .compose-inner { max-width: 100%; }
   .board-area { width: 100%; }
   .sticky-note { width: 180px !important; min-height: 120px; }
-  .header-mascot       { width: 70px; bottom: -28px; }
-  .header-mascot-left  { left: 4px; }
+  /* One smaller mascot size on mobile — keeps them all identical */
+  :root { --mascot-size: 84px; }
+  .header-mascot       { bottom: -28px; }
   .header-mascot-right { right: 4px; }
   /* Hide side mascots on mobile — they'd overlap content */
   .mascot-fixed-left, .mascot-fixed-right { display: none; }
-  /* Shrink compose buddy so it doesn't clip off narrow screens */
-  .compose-mascot { width: 78px; top: -46px; right: -12px; }
+  /* Nudge compose buddy so it doesn't clip off narrow screens */
+  .compose-mascot { top: -46px; right: -12px; }
 }
