@@ -38,10 +38,10 @@ A cute prawn character (transparent PNGs, `prawn-*.png`), placed like so:
 | File | Pose | Placed on |
 |---|---|---|
 | `prawn-joy.png` | happy, claws together | loading screen, compose box |
-| `prawn-bye.png` | waving | header (right, peeking) |
-| `prawn-dance.png` | spinning on a water swirl | celebrate pop |
-| `prawn-hah.png` | laughing out loud | floating left |
-| `prawn-cry.png` | happy tears | floating right |
+| `prawn-cry.png` | happy tears | header (right, peeking) |
+| `prawn-dance.png` | spinning on a water swirl | celebrate pop, floating left |
+| `prawn-bye.png` | waving | floating right |
 | `prawn-shell-sad.png` | wistful, holding a shell | footer |
+| `prawn-hah.png` | laughing out loud | bundled spare — not placed by default |
 
 Swap them the same way via the `data-beach-src` attributes.
