@@ -8,10 +8,11 @@ See a real deployed card in action before you make your own.
 
 > ⭐ **If this helps you say a nice goodbye, please star the repo** — it's the easiest way to say thanks and helps other teams find it.
 
-| 🍊 Original theme | 🏖️ Beach theme |
-| :-: | :-: |
-| ![Farewell Card — original theme, with notes pinned](docs/screenshot.png) | ![Farewell Card — beach theme, with notes pinned](docs/screenshot-beach.png) |
+🍊 Original theme 
+![Farewell Card — original theme, with notes pinned](docs/screenshot.png)
 
+🏖️ Beach theme 
+ ![Farewell Card — beach theme, with notes pinned](docs/screenshot-beach.png)
 <sub>Toggle between the two built-in themes any time with the 🍊 / 🏖️ switch in the corner.</sub>
 
 ---
