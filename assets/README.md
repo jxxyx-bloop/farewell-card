@@ -39,9 +39,12 @@ A cute prawn character (transparent PNGs, `prawn-*.png`), placed like so:
 |---|---|---|
 | `prawn-joy.png` | happy, claws together | loading screen, compose box |
 | `prawn-cry.png` | happy tears | header (right, peeking) |
-| `prawn-dance.png` | spinning on a water swirl | celebrate pop, floating left |
+| `prawn-dance.png` | spinning on a water swirl | celebrate pop |
 | `prawn-bye.png` | waving | floating right |
 | `prawn-shell-sad.png` | wistful, holding a shell | footer |
 | `prawn-hah.png` | laughing out loud | bundled spare — not placed by default |
+
+The floating-left mascot is hidden in beach mode (only the 🍊 theme shows one
+there) so no prawn pose appears twice on screen at the same time.
 
 Swap them the same way via the `data-beach-src` attributes.
