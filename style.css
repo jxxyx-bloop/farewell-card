@@ -18,7 +18,7 @@
   --accent-dot:    rgba(238,77,45,0.55);
   --mascot-shadow: rgba(238,77,45,0.35);
   --footer-color:  #EE4D2D;
-  --mascot-size:   120px; /* one size for every mascot — keeps them identical */
+  --mascot-size:   135px; /* one size for every mascot — keeps them identical */
 }
 body.beach-theme {
   --bg-1: #E8F9F8;
@@ -39,6 +39,7 @@ body.beach-theme {
   --accent-dot:    rgba(0,172,193,0.55);
   --mascot-shadow: rgba(0,172,193,0.35);
   --footer-color:  #00838F;
+  --mascot-size:   120px; /* beach mascots stay at their original size */
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -503,7 +504,8 @@ body.beach-theme .mascot-fixed-left { top: 72%; }
   .board-area { width: 100%; }
   .sticky-note { width: 180px !important; min-height: 120px; }
   /* One smaller mascot size on mobile — keeps them all identical */
-  :root { --mascot-size: 84px; }
+  :root { --mascot-size: 94px; }
+  body.beach-theme { --mascot-size: 84px; }
   .header-mascot       { bottom: -28px; }
   .header-mascot-right { right: 4px; }
   /* Hide side mascots on mobile — they'd overlap content */
