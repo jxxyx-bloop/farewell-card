@@ -17,11 +17,13 @@ project and are placed like so:
 
 | File | Pose | Placed on |
 |---|---|---|
-| `mascot-happy.png` | cheering, arms up | loading screen, compose box, celebrate pop |
-| `mascot-adventure.png` | explorer with backpack | header (left), floating left |
-| `mascot-shy.png` | bashful / blushing | header (right, peeking), floating right |
+| `mascot-happy.png` | cheering, arms up | loading screen |
+| `mascot-happy2.png` | cheerful | compose box |
+| `mascot-dance.png` | dancing | celebrate pop |
+| `mascot-adventure.png` | explorer with backpack | floating left |
+| `mascot-shy.png` | bashful / blushing | header (right, peeking) |
 | `mascot-icecream.png` | sitting with a treat | footer |
-| `mascot-sad.png` | teary under a rain cloud | bundled spare — not placed by default |
+| `mascot-sad.png` | teary under a rain cloud | floating right |
 
 There is intentionally **no angry mascot**.
 
@@ -31,5 +33,15 @@ file simply hides (see above), so partial sets are fine.
 
 ## Beach-theme mascots
 
-The `*.svg` files in this folder are the beach-theme art and are committed with
-the project. Swap them the same way via the `data-beach-src` attributes.
+A cute prawn character (transparent PNGs, `prawn-*.png`), placed like so:
+
+| File | Pose | Placed on |
+|---|---|---|
+| `prawn-joy.png` | happy, claws together | loading screen, compose box |
+| `prawn-bye.png` | waving | header (right, peeking) |
+| `prawn-dance.png` | spinning on a water swirl | celebrate pop |
+| `prawn-hah.png` | laughing out loud | floating left |
+| `prawn-cry.png` | happy tears | floating right |
+| `prawn-shell-sad.png` | wistful, holding a shell | footer |
+
+Swap them the same way via the `data-beach-src` attributes.

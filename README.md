@@ -159,7 +159,7 @@ Everything is yours to rebrand — mascots, colours, copy, even the team name. H
 | Recipient name, subtitle, prompt | `config.js` |
 | Note colors, emoji set, fonts | the `STICKY_COLORS` / `EMOJIS` / `FONTS` arrays in `app.js` |
 | Themes, layout, animations | `style.css` |
-| Mascot illustrations | swap the art in `assets/` — see [`assets/README.md`](assets/README.md). The 🍊 theme uses the bundled `mascot-*.png` red-panda set; the 🏖️ theme uses the bundled beach `.svg` files. A missing mascot is hidden automatically, so partial sets are fine. |
+| Mascot illustrations | swap the art in `assets/` — see [`assets/README.md`](assets/README.md). The 🍊 theme uses the bundled `mascot-*.png` red-panda set; the 🏖️ theme uses the bundled `prawn-*.png` set. A missing mascot is hidden automatically, so partial sets are fine. |
 
 ---
 
