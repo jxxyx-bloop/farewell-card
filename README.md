@@ -20,7 +20,7 @@ Pin sticky-note goodbyes on a shared board, synced live for everyone — and dep
 > See a real, deployed card before you build your own. It's the fastest way to understand what you're about to make.
 
 > [!NOTE]
-> **Enjoying this?** A star on the repo takes one second, costs nothing, and helps other teams find the project. We will not beg. (We are, a little.)
+> **Enjoying this?** A star on the repo takes one second, costs nothing, and help others find the project.
 
 <div align="center">
 
@@ -40,7 +40,7 @@ Pin sticky-note goodbyes on a shared board, synced live for everyone — and dep
 
 ## Before you begin — what you'll need
 
-You don't need to be a developer to build this card. You **do** need three free accounts. Each plays one job, all sign up in your browser, and none ask for a credit card.
+You don't need to be a developer to build this card. You **do** need three free accounts. Each plays one job, all sign up in your browser, and none ask for a credit card. Think of it as a three-ticket sprint with no story points and a guaranteed ship date.
 
 > [!IMPORTANT]
 > Set up these three first. Do it now, and the rest of the guide takes about five minutes. Skip it, and you'll be stuck halfway through wondering where your notes went.
@@ -70,7 +70,7 @@ Two ways to use it:
 2. **Learn full-stack by shipping something real.** Roughly 600 lines of approachable code that show how *frontend → API → storage → deploy* actually fit together. A great first deployed project, minus the boilerplate and the tears.
 
 > [!NOTE]
-> You can build and deploy the whole thing from your browser. No terminal required, no apologies needed.
+> You can build and deploy the whole thing from your browser. No terminal, no tickets, no "let me loop in eng" — just you and a few buttons.
 
 ---
 
@@ -121,7 +121,7 @@ git clone https://github.com/jxxyx-bloop/farewell-card.git
 
 ### Step 2 — Personalize
 
-`config.js` is the only file you edit for basic use. In your new repo:
+`config.js` is the only file you edit for basic use. One file, no merge conflicts, no design review — a PM's dream. In your new repo:
 
 1. Open `config.js`.
 2. Click the pencil (edit) icon.
@@ -180,6 +180,9 @@ node build.js && wrangler deploy
 2. Send it to your team.
 3. Watch the notes roll in.
 
+> [!NOTE]
+> No launch checklist, no go-to-market deck, no rollout phases. Just paste the link in the group chat and call it shipped.
+
 ---
 
 ## Run it locally
@@ -231,7 +234,7 @@ Host on Vercel by swapping the Cloudflare Worker for a Vercel **Serverless Funct
 
 ## Customize further
 
-Everything here is yours to rebrand — mascots, colours, copy, even the team name. Here's a variation one team built on top of the template, with their own characters:
+Everything here is yours to rebrand — mascots, colours, copy, even the team name. Pixel-push to your heart's content; no one will ask you to "make the logo bigger." Here's a variation one team built on top of the template, with their own characters:
 
 ![A team's customized variation of the farewell card](docs/variation-shopee.png)
 
