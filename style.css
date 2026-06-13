@@ -316,6 +316,15 @@ body::before {
   filter: drop-shadow(0 5px 14px var(--mascot-shadow));
 }
 .footer p { font-family: 'Shadows Into Light', cursive; color: var(--footer-color); opacity: 0.65; font-size: 15px; }
+/* Subtle credit / call-to-action linking back to the source repo. Kept quiet:
+   small, low-opacity, no underline until hover. */
+.footer-credit { margin-top: 6px; font-size: 12px; opacity: 0.4; }
+.footer-credit a {
+  font-family: 'Nunito', sans-serif; color: inherit;
+  text-decoration: none; border-bottom: 1px dotted currentColor;
+  transition: opacity 0.2s;
+}
+.footer-credit:hover { opacity: 0.7; }
 
 /* Mascot celebration pop-up */
 .mascot-celebrate {
