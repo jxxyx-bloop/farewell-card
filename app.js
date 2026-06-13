@@ -438,6 +438,30 @@ function pinSVG(color){
     +'<circle cx="8" cy="8" r="2.5" fill="rgba(255,255,255,0.4)"/></svg>';
 }
 
+// Reactions + replies row, shared by both card themes so the comment and emoji
+// reaction features stay at parity across the sticky-note and beach postcard views.
+function reactionsRowHTML(n){
+  const safeId = Number(n.id);
+  const reactions = n.reactions || {};
+  const chips = Object.entries(reactions)
+    .filter(function(e){ return e[1] > 0; })
+    .map(function(e){
+      var emoji = e[0], count = e[1];
+      return '<button class="reaction-chip" onclick="addReaction('+safeId+',\''+escapeHtml(emoji)+'\')" title="React with '+escapeHtml(emoji)+'">'
+        +'<span>'+emoji+'</span><span class="count">'+Number(count)+'</span></button>';
+    }).join('');
+  const pickerBtns = EMOJIS.map(function(em){
+    return '<button class="emoji-btn" onclick="addReaction('+safeId+',\''+escapeHtml(em)+'\');toggleReactionPicker('+safeId+')">'+em+'</button>';
+  }).join('');
+  const replyCount = (n.replies || []).length;
+  return '<div class="reactions-row">'
+    +chips
+    +'<button class="react-add-btn" onclick="toggleReactionPicker('+safeId+')" title="Add reaction">+</button>'
+    +'<div class="reaction-picker-popover hidden" id="rpicker-'+safeId+'">'+pickerBtns+'</div>'
+    +'<button class="reply-btn" onclick="openReplyModal('+safeId+')">💬'+(replyCount > 0 ? ' '+replyCount : '')+'</button>'
+    +'</div>';
+}
+
 function stickyHTML(n,d,noteW){
   const c=STICKY_COLORS[n.colorIdx%STICKY_COLORS.length],f=FONTS[n.fontIdx%FONTS.length],r=n.rotation||0;
   const safeMsg = escapeHtml(n.message);
@@ -454,25 +478,7 @@ function stickyHTML(n,d,noteW){
       +'<button class="note-action-btn delete-btn" onclick="deleteNote('+safeId+')" title="Delete your note">🗑️</button>'
       +'</div>'
     : '';
-  // Reactions row: existing chips + "+" button + inline picker popover
-  const reactions = n.reactions || {};
-  const chips = Object.entries(reactions)
-    .filter(function(e){ return e[1] > 0; })
-    .map(function(e){
-      var emoji = e[0], count = e[1];
-      return '<button class="reaction-chip" onclick="addReaction('+safeId+',\''+escapeHtml(emoji)+'\')" title="React with '+escapeHtml(emoji)+'">'
-        +'<span>'+emoji+'</span><span class="count">'+Number(count)+'</span></button>';
-    }).join('');
-  const pickerBtns = EMOJIS.map(function(em){
-    return '<button class="emoji-btn" onclick="addReaction('+safeId+',\''+escapeHtml(em)+'\');toggleReactionPicker('+safeId+')">'+em+'</button>';
-  }).join('');
-  const replyCount = (n.replies || []).length;
-  const reactionsRow = '<div class="reactions-row">'
-    +chips
-    +'<button class="react-add-btn" onclick="toggleReactionPicker('+safeId+')" title="Add reaction">+</button>'
-    +'<div class="reaction-picker-popover hidden" id="rpicker-'+safeId+'">'+pickerBtns+'</div>'
-    +'<button class="reply-btn" onclick="openReplyModal('+safeId+')">💬'+(replyCount > 0 ? ' '+replyCount : '')+'</button>'
-    +'</div>';
+  const reactionsRow = reactionsRowHTML(n);
 
   const initials = escapeHtml(safeAuthor.trim().split(/\s+/).map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase());
   return '<div class="sticky-note" style="'+widthStyle+'background:'+c.bg+';border-bottom:3px solid '+c.border+';box-shadow:3px 4px 12px '+c.shadow+',0 1px 3px rgba(0,0,0,0.08);transform:rotate('+safeRotation+'deg);animation:float-in 0.5s '+d+'s ease-out both;">'
@@ -521,6 +527,7 @@ function postcardHTML(n, d, noteW) {
         <span class="author-badge" style="background:${grad[0]}">${escapeHtml(initials)}</span>— ${safeAuthor}
       </div>
       ${actions}
+      ${reactionsRowHTML(n)}
     </div>
   </div>`;
 }

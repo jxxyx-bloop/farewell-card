@@ -459,7 +459,6 @@ body.beach-theme .header { padding-bottom: 52px; }
 .postcard {
   background: white; border-radius: 10px;
   box-shadow: 3px 4px 14px rgba(0,0,0,0.11), 0 1px 3px rgba(0,0,0,0.07);
-  overflow: hidden;
   position: relative; transition: transform 0.25s ease, box-shadow 0.25s ease; cursor: default;
 }
 .postcard:hover {
@@ -469,6 +468,9 @@ body.beach-theme .header { padding-bottom: 52px; }
 }
 .pc-header {
   height: 40px; display: flex; align-items: center; justify-content: center;
+  /* Round the top corners here since .postcard no longer clips with overflow:hidden
+     (the reactions row's emoji picker pops above the row and must not be clipped). */
+  border-radius: 10px 10px 0 0;
 }
 .pc-emoji { font-size: 22px; line-height: 1; }
 .pc-body { padding: 12px 14px 10px; }
