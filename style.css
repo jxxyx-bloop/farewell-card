@@ -496,6 +496,12 @@ body.beach-theme .mascot-fixed-left { display: none; }
 
 /* Postcard edit/delete hover — mirrors sticky-note rule */
 .postcard:hover .note-actions { opacity: 1; pointer-events: auto; }
+/* The beach postcard has a compact body, so the comment button at the bottom-right
+   of the reactions row lands directly under the bottom-anchored .note-actions. Because
+   the reactions row is emitted after the actions in the DOM, it paints on top and steals
+   the clicks — leaving the edit/delete buttons unusable. Anchor the actions to the
+   top-right corner (free space over the header) and lift them above the reactions row. */
+.postcard .note-actions { top: 8px; right: 8px; bottom: auto; z-index: 5; }
 
 /* ─── Theme toggle icons in sync pill ─── */
 .theme-icon {
