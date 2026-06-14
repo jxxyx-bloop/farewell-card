@@ -251,8 +251,11 @@ body::before {
 .toast { position:fixed; bottom:32px; left:50%; transform:translateX(-50%); background:rgba(25,25,25,0.88); color:white; border-radius:24px; padding:11px 22px; font-family:'Nunito',sans-serif; font-size:15px; font-weight:600; z-index:2000; pointer-events:none; white-space:nowrap; animation:toast-in 0.28s ease-out, toast-out 0.28s ease-in 2.7s forwards; }
 
 /* Note edit/delete action buttons */
+/* Anchored to the top-right corner in both themes so the floating edit/delete
+   controls never overlap the comment button that lives at the bottom of the
+   reactions row (which would otherwise paint on top and steal the clicks). */
 .note-actions {
-  position: absolute; bottom: 8px; right: 6px;
+  position: absolute; top: 8px; right: 8px; z-index: 5;
   display: flex; gap: 4px; opacity: 0; transition: opacity 0.2s; pointer-events: none;
 }
 .sticky-note:hover .note-actions { opacity: 1; pointer-events: auto; }
@@ -494,7 +497,8 @@ body.beach-theme .header { padding-bottom: 52px; }
 /* ─── No fixed-left mascot in beach mode — avoids repeating a prawn pose ─── */
 body.beach-theme .mascot-fixed-left { display: none; }
 
-/* Postcard edit/delete hover — mirrors sticky-note rule */
+/* Postcard edit/delete hover — mirrors sticky-note rule. Positioning is shared
+   via the base .note-actions rule (top-right corner). */
 .postcard:hover .note-actions { opacity: 1; pointer-events: auto; }
 
 /* ─── Theme toggle icons in sync pill ─── */
